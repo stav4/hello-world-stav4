@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Class demo 3</title>
+        <script>
+            function function1(){
+                document.getElementById("P1").innerHTML=
+                "I've done all my shopping!";
+            }
+        </script>
+    </head>
+    <body>
+        <p id="P1"></p>
+        <p id="P2">Bill</p>
+        <img id= "shoppingcart" alt="shopping cart" width="300" src="FullShoppingCart.jpg">
+        <script>
+            let shopping = [' bread', ' milk', ' cheese', ' hummus', ' noodles'];
+            document.getElementById("P1").innerHTML=
+            "I shopping list is: " + shopping;
+        </script>
+        <script>
+            function function2(a,b,c){
+                return a + b+ c + "$";
+            }
+            document.getElementById("P2").innerHTML= function2(4,7,6);
+
+        </script>
+        <button type="button" onclick = "function1(); function2(0,0,0);">shopping end</button>
+        <button type="button" onclick = 
+        "document.getElementById('shoppingcart').src='EmptyShoppingCart.jpg'" >Empty a cart </button>
+
+    </body>
+</html>
