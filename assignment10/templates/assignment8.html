@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment 8</title>
+    {% include('header.html') %}
+
+</head>
+<body>
+    {% if user %}
+        <h1 class="{% if user.gender == 'male' %} male {% else %} female {% endif %}">hello {{ user.firstName | default('user', true) }}</h1>
+        <h3>A bit about myself:</h3>
+        <h3>Hobbies:</h3>
+
+        <ul>
+            {% for hobby in hobbies %}
+                <li>{{ hobbxsy }}</li>
+            {% endfor %}
+        </ul>
+
+        {% block music %}
+        <h3>music:</h3><b></b>
+        <ul>
+            {% for song in music %}
+                <li>{{ song }}</li>
+            {% endfor %}
+        </ul>
+        {% endblock %}
+
+
+    {% else %}
+        <h3>please sign in</h3>
+    {% endif %}
+
+
+</body>
+</html>

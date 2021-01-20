@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment9</title>
+</head>
+<body>
+    <h1>Search form</h1>
+    <form method="GET" action="/assignment9">
+        <input type="text" name="usersearch">
+        <input type="submit" value="search">
+    </form>
+
+    {% if usersearch != None %}
+
+        {% if isEmpty == True %}
+          <h1>You entered an empty search, here are all the users list:</h1>
+          {% for user in userslist %}
+            {% for key, value in user.items() %}
+                <li>{{ key }} : {{ value }}</li>
+            {% endfor %}
+          {% endfor %}
+
+        {% elif userInList %}
+            <h1>Search result:</h1>
+                {% for key, value in userDet.items() %}
+                    <LI>{{ key }} : {{ value }}</LI>
+                {% endfor %}
+
+        {% else %}
+            <h2>the user you search for, does not exist</h2>
+        {% endif %}
+
+    {% endif %}
+
+    {% if session.get('username') == None %}
+        <h1>Registration form</h1>
+        <form method="POST" action="/assignment9">
+            <input type="text" name="username" placeholder="your name">
+            <input type="submit" name="logout" value="Register">
+        </form>
+    {% else %}
+        <h1>user: {{ session.get('username') }}</h1>
+        <a href="logout"><button>logout</button></a>
+    {% endif %}
+
+</body>
+</html>
