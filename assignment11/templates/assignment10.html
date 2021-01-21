@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment10</title>
+</head>
+<body>
+
+        <h1>List Of Users</h1>
+            <ul>
+                {% if users %}
+                    {% for user in users %}
+                        <li>
+                       {{ user.ID }} : {{ user.firstName }} {{ user.lastName }}
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+
+
+        <h1>Insert form</h1>
+        <form action="/insert_user" method="POST" onsubmit="alert('The insertion have been done');">
+            <label for="ID">ID:</label><br>
+            <input name ="ID" id="ID" required><br>
+            <label for="firstName">First Name:</label><br>
+            <input name ="firstName" id="firstName" required><br>
+            <label for="lastName">Last Name:</label><br>
+            <input name = "lastName" id="lastName" required><br>
+            <label for="email">Email:</label><br>
+            <input name = "email" id="email" required><br>
+            <button type="submit" id="insertUser">Insert The New User</button>
+        </form>
+
+
+        <h1>Update form</h1>
+            <form action="/update_row" method="POST" onsubmit="alert('The user have been updated');">
+                <label for="ID">ID:</label><br>
+                <input name ="ID" id="ID"><br>
+                <label for="firstName">First Name:</label><br>
+                <input name = "firstName" id="firstName" ><br>
+                <label for="lastName">Last Name:</label><br>
+                <input name = "lastName" id="lastName" ><br>
+                <label for="email">Email:</label><br>
+                <input name = "email" id="email" ><br>
+                <button type="submit" id="insertUser">Update</button>
+            </form>
+
+
+        <h1>Delete form</h1>
+        <h4>Insert name for delete</h4>
+            <form action ="/delete_user" method="GET" onsubmit="alert('The user has been deleted');">
+                ID: <label for="ID"></label><br>
+                    <input name ="ID" id="ID"><br>
+                    <input type="submit" value="Delete User">
+            </form>
+
+</body>
+</html>
+
+

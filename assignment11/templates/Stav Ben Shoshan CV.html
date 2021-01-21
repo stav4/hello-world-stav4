@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+    <head>
+         <title>Stav Ben Shoshan CV</title>
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/CV.css') }}">
+        <script src="{{ url_for('static', filename='js/myScripts.js') }}"></script>
+
+    </head>
+    <body>
+
+        <center><h1 style="color: black; display:inline; font-size: 40px; justify-content: center;
+         " > Stav Ben Shoshan</h1><br><br></center>
+      
+        <center><img id= "StavPic" src=  "{{ url_for('static', filename='img/StavPic.png') }}" class="StavPic" alt= "My picture" style= "width: 270PX; height: 270PX; object-fit: cover; border-radius: 50%; text-align:center;" onmouseover="resizePic(this.id)"></center>
+         
+        <center><div class="nevigator-bar">
+            
+            <button class="About_me" onclick="location.href='Stav Ben Shoshan CV.html#about'">About Me</button>
+            <button class="work_experience" onclick="location.href='Stav Ben Shoshan CV.html#work_experience'">Work Experience</button>
+            <button class="education" onclick="location.href='Stav Ben Shoshan CV.html#education'">Education</button>
+            <button class="volunteer_work" onclick="location.href='Stav Ben Shoshan CV.html#volunteer_work'">Volunteering</button>
+            <button class="skills" onclick="location.href='Stav Ben Shoshan CV.html#skills'">My Skills</button>
+            <button class="contact_me" onclick="location.href='Stav Ben Shoshan CV.html#contact_me'">Contact Me
+                    <img src= "{{ url_for('static', filename='img/tele2.jpg') }}" alt= "Telephone" style="border-radius: 50%;" width="15px" height="15px">
+            </button>
+            <button class="download" type="submit" onclick="window.open('Stav Ben Shoshan CV.pdf')">Download as PDF</button>
+
+        </div></center>
+
+    <div class = grid-container>
+
+        <div id="about_me" class="about_me" style="text-align: center;" onmouseover="DarkerColor(this.id)" onmouseout="LighterColor(this.id)">
+
+            <h2 > About Me</h2>
+            <p style="text-align: center;">
+                Fourth year Industrial Engineering student.<br>
+                Working at Monday.com in the business operations team as a BizTech.                
+            </p>
+
+        </div>
+
+        <div id="work_experience" class="work_experience" onmouseover="DarkerColor(this.id)" onmouseout="LighterColor(this.id)">
+            
+            <h2> Work Experience</h2>
+           
+            <ul>
+             <li><b>Business Operations</b><br><i>Monday.com, Tel Aviv | present </i><br> Optimize ongoing operations and processes by analyzing area for improvement and support systems.</li>
+             <li><b>Customer Service Representative</b><br><i>Psagot investment house, Tel Aviv | 2019 </i><br> Responding to customer inquiries and providing information about bank accounts, policies, products, and
+                services.</li>
+             <li><b>Production Worker and Shift Manager</b><br><i>"Tama" factory, Kibbutz Gal’ed | 2014 – 2015</i><br>Working in production line of farm grown solutions, and later as a shift manager authorizing new employees.</li>
+            </ul>
+
+        </div>
+
+
+        <div id="education" class="education" onmouseover="DarkerColor(this.id)" onmouseout="LighterColor(this.id)">
+            
+            <h2> Education</h2>
+
+            <ul>
+             <li><b>Industrial Engineering Student</b><br><i>Ben Gurion University of the Negev, Be'er Sheva | 2017 - Present </i><br> Fourth year undergraduate student, majoring in information systems.</li>
+             <li><b>High School Diploma</b><br><i>Carmel - Zvulun, High School Kibbutz Yagur | 2005 – 2011</i><br>Extended 5 units in Biology and Communication.</li>
+            </ul>
+        </div>
+
+
+        <div id="volunteer_work" class="volunteer_work" onmouseover="DarkerColor(this.id)" onmouseout="LighterColor(this.id)">
+          
+            <h2>Volunteer Work</h2>
+          
+            <ul>
+                <li><b>Perach- Tutorial Project</b><br><i>Be'er Sheva| 2018 - 2019</i><br> Giving math lessons to high school pupils.</li>
+                <li><b>Guiding 'Youth at Risk'</b><br><i>Kfar Galim Youth Village| 2011 - 2012</i><br>Mentoring for children from underprivileged backgrounds. teaching and
+                    guidance of educational and social activities.</li>
+            </ul>
+
+        </div>
+
+
+        <div id="skills" class="skills" onmouseover="DarkerColor(this.id)" onmouseout="LighterColor(this.id)">
+         
+            <h2>My Skills</h2>
+          
+            <ul>
+                <li>Java</li>
+                <li>Microsoft SQL server</li>
+                <li>Python</li>
+                <li>R</li>
+                <li>Excel VBA</li>
+                <li>Tableau</li>
+                <li> Power BI</li>    
+            </ul>
+
+        </div>
+
+        <div id="contact_details" class="contact_details" onmouseover="DarkerColor(this.id)" onmouseout="LighterColor(this.id)">
+            <h2 > Contact Details</h2>
+            <p style="padding: 10px;"><b>Email:</b> Stav93@gmail.com<br>
+                <b>Phone:</b> +972-525841093
+            </p>
+             <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/stav-ben-shoshan-0688441a3/" target="_blank" style="text-decoration:none">
+             <img src= {{ url_for('static', filename='img/linkedin.jpg') }} alt="LinkedIn" width="50px" style="padding: 1px;"></a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/stav.benshoshan.3" target="_blank" style="text-decoration:none">
+             <img src= {{ url_for('static', filename='img/facebook.jpg') }} alt="Facebook" width="50px" style="padding: 1px;"></a>
+
+        </div>
+
+        <div id="contact" class="contact" onmouseover="DarkerColor(this.id)" onmouseout="LighterColor(this.id)">
+
+            <h2 id="contact_me" >Contact Me</h2>
+        
+            <form action="action_page.php" onsubmit="return validate(this);" target="_self">
+
+                <label for="fname">First Name</label><br>
+                <input type="text" id="fname" name="firstname" placeholder="Your name"><br>
+            
+                <label for="lname">Last Name</label><br>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name"><br>
+            
+                <label for="subject">Subject</label><br>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:120px; width: 500px;" ></textarea>
+            
+                <input type="button" value="Send" onclick='SendMessage()' style="display: block; margin:10px"> 
+                
+                <p id="afterSend"></p>
+            
+            </form>
+
+        </div>
+    </div>
+    </body>
+</html>
